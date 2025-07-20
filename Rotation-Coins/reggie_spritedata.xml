@@ -1,0 +1,27 @@
+  <sprite id="253" name="Rotation Controlled Coin" notes="A standard coin that can be paired with rotation controllers. It does not have any additional features like [147] Coin.">
+    <dependency notes="This coin does not function and cannot be collected unless actually paired to a rotation controller.">
+      <suggested sprite="96"/>
+      <suggested sprite="149"/>
+    </dependency>
+    <checkbox nybble="5.4" title="Always Upright" comment="When enabled, the coin will remain upright regardless of its rotation." comment2="This option will not work with 'Tilted Coin' enabled." requirednybble="6" requiredval="0"/>
+	<checkbox nybble="5.3" title="Tilted Coin" comment="When enabled, the bottom of the coin will always face the paired rotation controller." requirednybble="6" requiredval="0"/>
+	<list nybble="6" title="Forced Rotation" comment="This determines the rotation that the coin will always be set to, regardless of it being rotated. This overrides the 'Always Upright' and 'Tilted Coin' options.">
+      <entry value="0">Disabled</entry>
+      <entry value="1">22.5°</entry>
+      <entry value="2">45.0°</entry>
+      <entry value="3">67.5°</entry>
+      <entry value="4">90.0°</entry>
+      <entry value="5">112.5°</entry>
+      <entry value="6">135.0°</entry>
+      <entry value="7">157.5°</entry>
+      <entry value="8">180.0°</entry>
+      <entry value="9">202.5°</entry>
+      <entry value="10">225.0°</entry>
+      <entry value="11">247.5°</entry>
+      <entry value="12">270.0°</entry>
+      <entry value="13">292.5°</entry>
+      <entry value="14">315.0°</entry>
+      <entry value="15">337.5°</entry>
+    </list>
+	<value nybble="11-12" title="Rotation ID" comment="This pairs the Coin to a matching rotation controller." idtype="Rotation"/>
+  </sprite> <!-- #253: Rotation Controlled Coin -->

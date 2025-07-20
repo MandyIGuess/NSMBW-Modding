@@ -1,17 +1,18 @@
-# NewerSMBW-Modding
-This repo is for me to put all the stuff I've made for NewerSMBW/NSMBWer+. It'll mainly consist of bugfixes, improvements, and some new
-features. If you find any issues or bugs (with the content here, not NewerSMBW bugs), report them in the Issues tab.
+# NSMBW-Modding
+This repo is for me to put all the stuff I've made for NewerSMBW and NSMBWer+. It'll mainly consist of bugfixes, improvements, and some new
+features. If you find any issues or bugs (with the content here, not bugs for Newer/NSMBWer+), report them in the Issues tab.
 
-The code hacks in this repo were made with the `cw` branch of [NewerSMBW's GitHub][newer], and are intended to be used with v1.3.0 of the mod,
-however some features may work in other versions, or in other non-Newer mods such as [NSMBWer+][nsmbwer]. If this is the case, it will be mentioned in
-that feature's readme.
+The code hacks in this repo are made either with [NewerSMBW's source code][newer] (specifically the code for v1.3.0), or [NSMBWer+][nsmbwer].
+Most features are compatible with both bases, and the ones that aren't will mention it in their README.
 
-Don't ask me to port any code hacks to older versions of NewerSMBW. Most hacks are simple enough that anyone should be able to adapt it.
+Don't ask me to port any code hacks to older versions of NewerSMBW. If you make your own ports, feel free to release them, but link back to the
+original version on this repo.
 
 ## Full List of Features
 - [Improved Level Nodes](/Improved-Level-Nodes): Color animations and fixed rotation for Newer's level nodes!
 - [TPC Opening Port](/TPC-Opening-Port): Opening from NSMBW The Prankster Comets, ported to Newer 1.30 and NSMBWer+!
 - [Retail Map HUD in Newer](/Retail-Map-Hud-In-Newer): Recreation of the retail game's World Map HUD in Koopatlas!
+- [Rotation Controlled Coin Improvements](/Rotation-Coins): Adds various new settings to the Rotation Controlled Coin sprite!
 <!-- - [Better Koopatlas Lighting](/Better-KP-Lighting): Support for using different lighting between Koopatlas maps/worlds! -->
 
 <details>
@@ -26,7 +27,7 @@ Don't ask me to port any code hacks to older versions of NewerSMBW. Most hacks a
   <summary>Retail Map Improvements: Small improvements made to the retail map system.</summary>
   <p></p>
 
-  - [Start Node Directions](/Start-Node-Directions): Code hack allows Start Nodes to point up, right, left, or down!
+  - [Start Node Directions](/Start-Node-Directions): Allows Start Nodes to point in any direction, not just up or right!
 </details>
 
 <details>
@@ -47,7 +48,7 @@ Don't ask me to port any code hacks to older versions of NewerSMBW. Most hacks a
 ## Crediting and Usage
 If you want to use anything from this for your own projects, be sure to credit me for it (credit me as `MandyIGuess`).
 
-Each released feature can either be gotten by downloading the entire repo (`Code -> Download ZIP`), or by finding the latest release of it in the Releases tab.
+Each released feature can be obtained either by downloading the entire repo (`Code -> Download ZIP`), or by finding the latest release of it in the Releases tab.
 
 Installation instructions can be found in the readme file in each folder.
 

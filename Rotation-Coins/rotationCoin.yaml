@@ -1,0 +1,8 @@
+---
+source_files: [../src/rotationCoin.cpp]
+hooks:
+  - name: RotationCoinNewSettings
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x809E5248
+    target_func: 'daEnCoinAngle_c::addNewSettings(void)'
