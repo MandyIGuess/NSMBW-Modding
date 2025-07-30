@@ -30,6 +30,9 @@ handleRotation__15daEnCoinAngle_cFv = 0x809E5660;
 Take `rotationCoin.yaml` and put it into your `/Kamek` folder.<br>
 Then, take `rotationCoin.cpp` and put it into your `/Kamek/src` folder.
 
+> [!IMPORTANT]
+> If installing this into NewerSMBW (and you don't have MoreSprites installed), open `rotationCoin.cpp`, and on line **28**, change `fBase_c::searchById` to `fBase_c::search`.
+
 Make sure to reference `rotationCoin.yaml` in your project YAML so it gets compiled!
 
 [newerGit]: https://github.com/Newer-Team/NewerSMBW
