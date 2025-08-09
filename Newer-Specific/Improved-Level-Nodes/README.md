@@ -7,7 +7,7 @@ This contains several modifications to the level nodes that make them behave sim
 
 If you find any bugs, issues, or have any questions, make an issue in the Issues tab.
 
-![Screenshot of the different colored level nodes next to each other.](/Improved-Level-Nodes/image.png)
+![Screenshot of the different colored level nodes next to each other.](/Newer-Specific/Improved-Level-Nodes/image.png)
 
 For a video of this in-game, see [this YouTube video](https://youtu.be/JccIT9YbMeg)!
 

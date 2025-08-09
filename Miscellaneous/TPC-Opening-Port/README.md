@@ -9,7 +9,7 @@ This ports the opening/flipbook sequence from NSMBWTPC to Newer 1.30, as well as
 
 If you find any bugs, issues, or have any questions, make an issue in the Issues tab.
 
-![Screenshot of the first scene of the opening, showing Peach's Castle at night.](/TPC-Opening-Port/image.png)
+![Screenshot of the first scene of the opening, showing Peach's Castle at night.](/Miscellaneous/TPC-Opening-Port/image.png)
 
 For a video of this in-game, see this video for [NewerSMBW](https://youtu.be/yuk37IsK4eU) and this one for [NSMBWer+](https://youtu.be/MIpEEY4dcnI)!
 

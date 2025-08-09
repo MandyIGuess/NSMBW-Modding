@@ -6,7 +6,7 @@ This adds various new settings to the Rotation Controlled Coin sprite!
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
 ![Static Badge](https://img.shields.io/badge/Modifies-Stages-25a86d)
 
-![Screenshot of the new rotation options added to the Rotation Coin.](/Rotation-Coins/image.png)
+![Screenshot of the new rotation options added to the Rotation Coin.](/Sprite-Hacks/Rotation-Coins/image.png)
 
 For a video of this in-game, see [this YouTube video](https://youtu.be/UnnHCc9OBcU)!
 

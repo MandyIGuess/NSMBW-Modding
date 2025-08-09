@@ -8,7 +8,7 @@ This simple code hack fixes the spacing issues that appear on the Game Over layo
 
 If you find any bugs, issues, or have any questions, make an issue in the Issues tab.
 
-![Comparison of the differences between each version.](/Game-Over-Fix-For-Modern-MarioFont/image.png)
+![Comparison of the differences between each version.](/Layout-Hacks/MarioFont-GameOver-Fix/image.png)
 
 ## Changes
 The most notable issue is that the *M* is so large that it line-breaks and appears above the other letters. This was easily fixed by resizing the
