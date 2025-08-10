@@ -126,7 +126,7 @@ int dWMHud_c::onCreate() {
 			P_flagSkull_01 = layout.findPictureByName("P_flagSkull_01");
 			P_bCenter_00->alpha = 210;
 
-			W_world_00 = layout.findPaneByName("W_world_00");
+			W_world_00 = layout.findWindowByName("W_world_00");
 			N_zanki_00 = layout.findPaneByName("N_zanki_00");
 
 			static const char *newerTextBoxNames[] = {"T_levelName_00", "T_levelNameS_00", "T_worldName_00", "T_worldNameS_00"};
@@ -244,17 +244,12 @@ void dWMHud_c::loadInfo() {
 			P_bCenter_00->colours[i+2] = save->fsHintColours[0];
 		}
 
-		// hack of the century: we're using the function below to recolor the window pane
-		// this is normally used for coloring wnds based on the player it's for (ex. pause menu)
-		// however we're gonna temporarily repurpose it
+		GXColorS10 frameBlack = {0xFF, 0xFF, 0xFF, 0x00};
+		GXColorS10 frameWhite = {save->fsHintColours[0].r, save->fsHintColours[0].g, save->fsHintColours[0].b, save->fsHintColours[0].a};
 
-		DontResetPlayerColorsW = true; // force it to NOT update the color values
-		DontResetPlayerColorsB = true;
-		MarioPlayerColorW = save->fsHintColours[0]; // set mario's white color to the world color,
-		MarioPlayerColorB = 0xFFFFFF00; // and black color to the pane's black mat color
-		assignPlayerColorsToWindow(W_world_00, 0); // call it for 0 (mario) since that's the data we replaced
-		DontResetPlayerColorsW = false; // allow them to be reset the next time that function runs
-		DontResetPlayerColorsB = false;
+		nw4r::lyt::Material *frameMat = W_world_00->GetFrameMaterial(0);
+		frameMat->mTevCols[0] = frameBlack;
+		frameMat->mTevCols[1] = frameWhite;
 
 		T_levelName_00->SetVisible(isLevelNode);
 		T_levelNameS_00->SetVisible(isLevelNode);

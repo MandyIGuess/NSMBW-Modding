@@ -3,6 +3,19 @@
 
 #include "koopatlas/core.h"
 
+namespace nw4r {
+namespace lyt {
+	class Window : public Pane {
+	public:
+		Window(void *, void *);
+		~Window();
+
+		virtual Material *GetContentMaterial() const;
+		virtual Material *GetFrameMaterial(ulong id) const;
+	};
+}
+}
+
 class dCyuukan_c {
 public:
 	void *vtable;
@@ -98,8 +111,9 @@ private:
 		*T_lifeNumber[4], *T_guideViewLS_00, *T_guideViewL_01;
 
 	// newer features
-	nw4r::lyt::Pane *W_world_00, *N_zanki_00;
+	nw4r::lyt::Pane *N_zanki_00;
 	nw4r::lyt::Picture *P_bCenter_00, *P_flagSkull_01;
 	nw4r::lyt::TextBox *T_levelName_00, *T_levelNameS_00, *T_worldName_00, *T_worldNameS_00;
+	nw4r::lyt::Window  *W_world_00;
 };
 #endif

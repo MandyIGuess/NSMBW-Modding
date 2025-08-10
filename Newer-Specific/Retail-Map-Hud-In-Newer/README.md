@@ -1,7 +1,7 @@
 # Retail Map HUD in NewerSMBW
 This replaces the Koopatlas HUD with a recreation of the retail World Map HUD!
 
-![Static Badge](https://img.shields.io/badge/Version-1.0.0-default)
+![Static Badge](https://img.shields.io/badge/Version-1.0.1-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NewerSMBW%20(1.3.0)-maroon)
 ![Static Badge](https://img.shields.io/badge/Modifies-User%20Interfaces-blue)
 ![Static Badge](https://img.shields.io/badge/Modifies-World%20Maps%20(Koopatlas)-25a86d)
@@ -32,15 +32,42 @@ Add the symbols below to your `kamek_pal.x` file. You do not need to add them to
 GetScaleFromAspectRatio = 0x800B5140;
 CheckIfCoinCollected__9SaveBlockFiii = 0x800CE300;
 isCyuukanStart__10dCyuukan_cFiUcUc = 0x8008F000;
-DontResetPlayerColorsB = 0x8042A22C;
-DontResetPlayerColorsW = 0x8042A22D;
-MarioPlayerColorB = 0x80358D58;
-MarioPlayerColorW = 0x80358D68;
-assignPlayerColorsToWindow__FPQ34nw4r3lyt4Panei = 0x800B3C50;
 ```
 
 Now, take the `Kamek` folder (inside the `Code` folder), and drop it into your source code. You should get a prompt about there being 4 files with the same
 names. Confirm you want to replace the files.
+
+In `game.h` around line 645, add the following line:
+```cpp
+class Window; // forward declaration
+```
+
+Then, find the `Material` class, and replace the following lines:
+```cpp
+class Material {
+public:
+    virtual ~Material();
+
+    // cheating a bit here
+    u8 _[0x3C];
+    // this is actually a pointer to more stuff, not just texmaps
+    TexMap *texMaps;
+};
+```
+with
+```cpp
+class Material {
+public:
+    virtual ~Material();
+
+    u8 mAnimList[0xC];
+    GXColorS10 mTevCols[3];
+    GXColor mTevKCols[4];
+    uint mGXMemCap, mGXMemNum;
+    // this is actually a pointer to more stuff, not just texmaps
+    TexMap *texMaps;
+};
+```
 
 ### Optional Change
 Koopatlas calls the function to update the course info before Mario actually reaches the destination path node, which looks strange with this HUD (as it doesn't hide while walking).
@@ -89,6 +116,9 @@ Now, test it in-game. If you have any issues, make sure you set it up correctly.
 If you cannot get it to work, make an issue on the Issues page, and I'll try to respond as soon as I can.
 
 ## Changelog
+
+### v1.0.1 (August 09th, 2025)
+- Added code to properly recolor the Window pane, to avoid conflicts with mods that modify the player Window colors
 
 ### v1.0.0 (May 08th, 2025)
 - Initial release
