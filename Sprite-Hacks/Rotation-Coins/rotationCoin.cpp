@@ -1,6 +1,7 @@
 #include <game.h>
 
 class daEnCoinAngle_c : public dEn_c {
+public:
 	u8 crap[0x5C0];
 	u32 rotControllerUniqueID;
 
