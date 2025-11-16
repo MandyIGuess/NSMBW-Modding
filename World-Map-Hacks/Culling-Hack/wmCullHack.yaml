@@ -17,3 +17,10 @@ hooks:
 
   - {name: FixTableOffset1, type: patch, addr_pal: 0x808E31A8, data: '83230004'} # add 0x4
   - {name: FixTableOffset2, type: patch, addr_pal: 0x808E32B0, data: 'C0030000'} # add 0x0
+
+  # Fixes the entire map culling if you have a non-existent bone in the table
+  - {name: RemoveRedundantCheck, type: nop_insn, area_pal: 0x808E31E8}
+  - {name: SetDummyIndex, type: patch, addr_pal: 0x808E31F8, data: '3800FFFF'} # li r3, -0x1
+
+  # Normally, it cancels the if index[0] < 0, but let's make it just skip to the next bone
+  - {name: FixCullLoop, type: patch, addr_pal: 0x808e3274, data: '418000E0'}

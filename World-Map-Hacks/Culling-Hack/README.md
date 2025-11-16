@@ -1,7 +1,7 @@
 # Culling Hack
 This allows you to easily modify the array used for culling bones on the World Map!
 
-![Static Badge](https://img.shields.io/badge/Version-1.0.0-default)
+![Static Badge](https://img.shields.io/badge/Version-1.0.1-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
 ![Static Badge](https://img.shields.io/badge/Modifies-World%20Maps-skyblue)
 
@@ -36,5 +36,15 @@ Take `wmCullHack.yaml` and put it into your `/Kamek` folder.<br>
 Then, take `wmCullHack.cpp` as well as `wmCullHack.S`, and put them into your `/Kamek/src` folder.
 
 Make sure to reference `wmCullHack.yaml` in your project YAML so it gets compiled!
+
+## Changelog
+
+### v1.0.1 (November 16th, 2025)
+- This release fixes a few inconvenient bugs with the retail game's culling:
+  - If a non-existent bone is referenced in a table, the game would set the bone index wrong, causing the root bone for the map to be culled instead. (This is the cause for the entire map disappearing once you past a certain point)
+  - This was only triggered by fixing the above bug, but the code for culling a map bone would cancel out of the entire process if a bone's index was -1. This has been changed so having a bone with an index of -1 will allow any bones after it to still be culled.
+
+### v1.0.0 (November 15th, 2025)
+- Initial release
 
 [nsmbwerGit]: https://github.com/Developers-Collective/NSMBWerPlus
