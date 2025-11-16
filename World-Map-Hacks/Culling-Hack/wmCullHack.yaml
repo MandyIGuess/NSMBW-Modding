@@ -1,0 +1,19 @@
+---
+source_files:
+  - ../src/wmCullHack.cpp
+  - ../src/wmCullHack.S
+hooks:
+  - name: newCullInfo1
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x808E3184
+    target_func: 'newCullInfo'
+
+  - name: newCullInfo2
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x808E325C
+    target_func: 'newCullInfo2'
+
+  - {name: FixTableOffset1, type: patch, addr_pal: 0x808E31A8, data: '83230004'} # add 0x4
+  - {name: FixTableOffset2, type: patch, addr_pal: 0x808E32B0, data: 'C0030000'} # add 0x0

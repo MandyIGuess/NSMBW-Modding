@@ -54,6 +54,7 @@ original version on this repo.
   <p></p>
 
   - [Start Node Directions](/World-Map-Hacks/Start-Node-Directions): Allows Start Nodes to point in any direction, not just up or right!
+  - [Culling Hack](/World-Map-Hacks/Culling-Hack): Allows you to edit the hardcoded culling info!
 </details>
 
 <details>
