@@ -31,6 +31,7 @@ original version on this repo.
 
   - [Single-Row Number of Players](/Layout-Hacks/Single-Row-Number-of-Players): Code hack that allows the 1 button on the Number of players screen to be on the same row as the others!
   - [Game Over Fix (for Modern MarioFont)](/Layout-Hacks/MarioFont-GameOver-Fix): Small hack that fixes the Game Over screen for mods that use the modern MarioFont!
+  - [MoreFonts](/Layout-Hacks/MoreFonts): Adds support for loading more than four global fonts, and loading fonts from archives!
 </details>
 
 <details>

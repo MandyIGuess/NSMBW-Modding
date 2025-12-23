@@ -1,0 +1,37 @@
+---
+source_files: [../src/moreFonts.cpp]
+hooks:
+  - name: CreateNewFontMng
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x800E51E0
+    target_func: 'CreateNewFontMng(void)'
+  
+  - name: GetResFontData
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x800B12D0
+    target_func: 'dNewFontMng_c::getResFontData(char *)'
+  
+  - name: GetFont
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x800B1310
+    target_func: 'dNewFontMng_c::getFont(int)'
+  
+  - name: GetResFontIndex
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x800B1410
+    target_func: 'dNewFontMng_c::getResFontIndex(char *)'
+  
+# Archive Fonts
+  - name: DisableFontOverride
+    type: nop_insn
+    area_pal: [0x80006A54, 0x80006A60]
+
+  - name: LoadFontFromArchive
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80006A70
+    target_func: 'InternalAccessor_GetFont(void *, char *)'
