@@ -14,7 +14,7 @@ An entry in the table is formatted like this:
 ```
 {300.0f, "snow00"},
 ```
-* The float determines when the bone is culled. It isn't known what the value is relative to, so you may need to test different values.<br>
+* The float specifies a radius around the bone. The game uses this as a radius for a sphere (centered on the bone), which is then used to determine if its currently on-screen.<br>
 * The string is the name of the bone that will be culled.
 
 ### Removing Bones
