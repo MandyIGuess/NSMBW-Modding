@@ -69,6 +69,15 @@ public:
 };
 ```
 
+After that, find this line below (around line 3190):
+```cpp
+nw4r::lyt::Pane *findWindowByName(const char *name) const;
+```
+and replace it with
+```cpp
+nw4r::lyt::Window *findWindowByName(const char *name) const;
+```
+
 ### Optional Change
 Koopatlas calls the function to update the course info before Mario actually reaches the destination path node, which looks strange with this HUD (as it doesn't hide while walking).
 
