@@ -1,13 +1,13 @@
 # Culling Hack
-This allows you to easily modify the array used for culling bones on the World Map!
+This allows you to easily modify the map model and actor culling on the World Map!
 
-![Static Badge](https://img.shields.io/badge/Version-1.0.1-default)
+![Static Badge](https://img.shields.io/badge/Version-1.1.0-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
 ![Static Badge](https://img.shields.io/badge/Modifies-World%20Maps-skyblue)
 
 ## Usage
-Please note, you can only cull a total of 30 bones per map, due to the way the data is stored.<br>
-Additionally, this may only work with the main map, and not submaps.
+Please note, for the map itself you can only cull a total of 30 bones, due to the way the data is stored.<br>
+Additionally, this will only work with the main map, and not submaps.
 
 
 An entry in the table is formatted like this:
@@ -23,6 +23,10 @@ To remove a bone, simply replace an entry with the `WM_EMPTY_CULL` define, this 
 ### Adding Bones
 To *add* a bone, replace a `WM_EMPTY_CULL` with an entry like the one above. Make sure the bone name is correct, or else it won't work in-game!
 
+### Culling Actors
+Actor culling is simple, there's a table in `wmActorCull.cpp` with all the retail culling values for each actor. Simply replace this float with
+another value, and it will be culled. A value of `0.0f` appears to make the actor never cull.
+
 ## Installation Instructions
 Make sure you are able to compile [NSMBWer+][nsmbwerGit] before you add this feature. Setup instructions can be found in the README file.
 
@@ -30,14 +34,22 @@ Add the following symbols below to your `kamek_pal.x` file. You do not need to a
 ```
 returnToCullCode = 0x808E3188;
 returnToCullCode2 = 0x808E3260;
+returnFromWmActorCull = 0x800F2A4C;
 ```
 
 Take `wmCullHack.yaml` and put it into your `/Kamek` folder.<br>
 Then, take `wmCullHack.cpp` as well as `wmCullHack.S`, and put them into your `/Kamek/src` folder.
+Also do the same for `wmActorCull.cpp` and `wmActorCull.S`.
 
 Make sure to reference `wmCullHack.yaml` in your project YAML so it gets compiled!
 
 ## Changelog
+
+### v1.1.0 (February 15th, 2025)
+- Added support for culling all* World Map actors!
+  - This works by using a custom table with copies of the culling values, and overwriting the actual originals with the new ones
+* Not really *all*, this skips a few map actors that are unused and aren't even grouped with the rest, as well as three actors that don't render models,
+and thus do not need to be culled.
 
 ### v1.0.1 (November 16th, 2025)
 - This release fixes a few inconvenient bugs with the retail game's culling:

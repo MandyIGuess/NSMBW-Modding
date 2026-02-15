@@ -2,6 +2,8 @@
 source_files:
   - ../src/wmCullHack.cpp
   - ../src/wmCullHack.S
+  - ../src/wmActorCull.cpp
+  - ../src/wmActorCull.S
 hooks:
   - name: newCullInfo1
     type: branch_insn
@@ -22,5 +24,11 @@ hooks:
   - {name: RemoveRedundantCheck, type: nop_insn, area_pal: 0x808E31E8}
   - {name: SetDummyIndex, type: patch, addr_pal: 0x808E31F8, data: '3800FFFF'} # li r3, -0x1
 
-  # Normally, it cancels the if index[0] < 0, but let's make it just skip to the next bone
+  # Normally, it skips the entire thing if index[0] < 0, but let's make it just skip to the next one
   - {name: FixCullLoop, type: patch, addr_pal: 0x808e3274, data: '418000E0'}
+
+  - name: cullAllActors
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x800F2A48
+    target_func: 'CullAllWmActors'
