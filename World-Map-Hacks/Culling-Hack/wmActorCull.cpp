@@ -75,7 +75,7 @@ static const float wmActorCullRadius[] = {
 
 f32 getWmActorCullRadius(short profName) {
     // There are map actors before WM_IBARA, however they do not need to be culled
-    if ((profName < WM_CS_SEQ_MNG) || (profName > WORLD_SELECT)) {
+    if ((profName < WM_CS_SEQ_MNG) || (profName >= WORLD_SELECT)) {
         return NO_CULL;
     }
 
