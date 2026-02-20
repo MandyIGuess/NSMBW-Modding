@@ -5,6 +5,7 @@ source_files:
   - ../src/wmActorCull.cpp
   - ../src/wmActorCull.S
 hooks:
+# Cull the map model
   - name: newCullInfo1
     type: branch_insn
     branch_type: b
@@ -27,8 +28,25 @@ hooks:
   # Normally, it skips the entire thing if index[0] < 0, but let's make it just skip to the next one
   - {name: FixCullLoop, type: patch, addr_pal: 0x808e3274, data: '418000E0'}
 
+# Cull World Map actors
   - name: cullAllActors
     type: branch_insn
     branch_type: b
     src_addr_pal: 0x800F2A48
     target_func: 'CullAllWmActors'
+
+# Cull World 7 cloud model
+  - name: newWmCloudCullInfo1
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x808CD9E4
+    target_func: 'LoadWmCloudCullNames'
+
+  - name: newWmCloudCullInfo2
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x808CDA7C
+    target_func: 'LoadWmCloudCullRadius'
+
+  # Removes completely unused float at idx[0] of the table... why does this even exist?
+  - {name: RemoveUnusedTableEntry, type: patch, addr_pal: 0x808CDAA8, data: 'C07D0000'} # lfs f3, 0x0(r29)

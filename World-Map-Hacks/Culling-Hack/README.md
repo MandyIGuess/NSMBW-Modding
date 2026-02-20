@@ -1,7 +1,7 @@
 # Culling Hack
 This allows you to easily modify the map model and actor culling on the World Map!
 
-![Static Badge](https://img.shields.io/badge/Version-1.1.0-default)
+![Static Badge](https://img.shields.io/badge/Version-1.2.0-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
 ![Static Badge](https://img.shields.io/badge/Modifies-World%20Maps-skyblue)
 
@@ -27,6 +27,10 @@ To *add* a bone, replace a `WM_EMPTY_CULL` with an entry like the one above. Mak
 Actor culling is simple, there's a table in `wmActorCull.cpp` with all the retail culling values for each actor. Simply replace this float with
 another value, and it will be culled. A value of `0.0f` appears to make the actor never cull.
 
+### Culling World 7's Clouds
+The world 7 clouds are a separate model from the main map, and are handled by a WM_CLOUD actor with its own culling system, similar to the map model's
+culling system. The bone names and sphere radius values can be found at the bottom of `wmActorCull.cpp`.
+
 ## Installation Instructions
 Make sure you are able to compile [NSMBWer+][nsmbwerGit] before you add this feature. Setup instructions can be found in the README file.
 
@@ -35,6 +39,8 @@ Add the following symbols below to your `kamek_pal.x` file. You do not need to a
 returnToCullCode = 0x808E3188;
 returnToCullCode2 = 0x808E3260;
 returnFromWmActorCull = 0x800F2A4C;
+returnFromWmCloudCull1 = 0x808CD9E8;
+returnFromWmCloudCull2 = 0x808CDA80;
 ```
 
 Take `wmCullHack.yaml` and put it into your `/Kamek` folder.<br>
@@ -45,11 +51,13 @@ Make sure to reference `wmCullHack.yaml` in your project YAML so it gets compile
 
 ## Changelog
 
-### v1.1.0 (February 15th, 2025)
+### v1.2.0 (February 20th, 2026)
+- Added proper support for culling the World 7 clouds (WM_CLOUD), as it uses its own culling system
+
+### v1.1.0 (February 15th, 2026)
 - Added support for culling all* World Map actors!
   - This works by using a custom table with copies of the culling values, and overwriting the actual originals with the new ones
-* Not really *all*, this skips a few map actors that are unused and aren't even grouped with the rest, as well as three actors that don't render models,
-and thus do not need to be culled.
+*Not counting unused map actors, or the few that cannot make any use of the culling system.*
 
 ### v1.0.1 (November 16th, 2025)
 - This release fixes a few inconvenient bugs with the retail game's culling:
