@@ -9,7 +9,7 @@ This allows you to easily modify the map model and actor culling on the World Ma
 Please note, for the map itself you can only cull a total of 30 bones, due to the way the data is stored.<br>
 Additionally, this will only work with the main map, and not submaps.
 
-
+### Culling Maps
 An entry in the table is formatted like this:
 ```
 {300.0f, "snow00"},
@@ -17,10 +17,10 @@ An entry in the table is formatted like this:
 * The float specifies a radius around the bone. The game uses this as a radius for a sphere (centered on the bone), which is then used to determine if its currently on-screen.<br>
 * The string is the name of the bone that will be culled.
 
-### Removing Bones
+#### Removing Bones
 To remove a bone, simply replace an entry with the `WM_EMPTY_CULL` define, this will add a dummy entry to the list.
 
-### Adding Bones
+#### Adding Bones
 To *add* a bone, replace a `WM_EMPTY_CULL` with an entry like the one above. Make sure the bone name is correct, or else it won't work in-game!
 
 ### Culling Actors
@@ -57,7 +57,8 @@ Make sure to reference `wmCullHack.yaml` in your project YAML so it gets compile
 ### v1.1.0 (February 15th, 2026)
 - Added support for culling all* World Map actors!
   - This works by using a custom table with copies of the culling values, and overwriting the actual originals with the new ones
-*Not counting unused map actors, or the few that cannot make any use of the culling system.*
+
+\* *Not counting unused map actors, or the few that cannot make any use of the culling system.*
 
 ### v1.0.1 (November 16th, 2025)
 - This release fixes a few inconvenient bugs with the retail game's culling:
