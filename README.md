@@ -16,6 +16,7 @@ original version on this repo.
 
   - [Jellybeam Lighting Fix](/Bugfixes/Jellybeam-Lighting)
   - [(Retail) Map HUD Star Coin Fix](/Bugfixes/Map-Hud-Star-Coins)
+  - [Toad Balloon Spawning Fix](/Bugfixes/Toad-Balloon-Spawn)
 </details>
 
 <!--<details>
@@ -40,7 +41,6 @@ original version on this repo.
 
   - [Improved Level Nodes](/Newer-Specific/Improved-Level-Nodes): Color animations and fixed rotation for Newer's level nodes!
   - [Retail Map HUD in Newer](/Newer-Specific/Retail-Map-Hud-In-Newer): Recreation of the retail game's World Map HUD in Koopatlas!
-  <!-- - [Better Koopatlas Lighting](/Newer-Specific/Better-KP-Lighting): Support for using different lighting between Koopatlas maps/worlds! -->
 </details>
 
 <details>

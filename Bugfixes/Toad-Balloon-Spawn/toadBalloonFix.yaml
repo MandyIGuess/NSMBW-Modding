@@ -1,0 +1,8 @@
+---
+source_files: [../src/toadBalloonFix.cpp]
+hooks:
+  - name: FixToadBalloonSpawning
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x807B9290
+    target_func: 'daBattleGame_c::execute(void)'
