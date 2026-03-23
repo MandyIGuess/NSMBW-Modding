@@ -1,0 +1,8 @@
+---
+source_files: [../src/stretchMushFix.S]
+hooks:
+  - name: FixStretchPlatformCulling
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8084A7F4
+    target_func: 'FixStretchPlatformCulling'
