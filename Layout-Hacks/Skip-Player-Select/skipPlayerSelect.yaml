@@ -1,0 +1,16 @@
+---
+source_files: [../src/skipPlayerSelect.cpp]
+hooks:
+  - name: SkipSelectPlayer
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80918A20
+    target_func: 'dScGameSetup_c::executeState_FadeIn(void)'
+
+  # Remove the fader between File Select and Select Player
+  # since not do so causes there to be two fade-outs
+  - {name: RemoveExtraFadeOut, type: nop_insn, area_pal: 0x80918984}
+  - {name: RemoveExtraFadeIn, type: nop_insn, area_pal: [0x80918A00, 0x80918A08]}
+
+  - {name: FS_DisableReset, type: nop_insn, area_pal: [0x80784160, 0x80784178]}     # Don't hide the screen or reset while exiting
+  - {name: FS_FixDateFileReset, type: nop_insn, area_pal: [0x809189CC, 0x809189E4]} # Don't reset the save actors while visible
