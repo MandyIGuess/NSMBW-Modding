@@ -1,0 +1,40 @@
+---
+# Make the music slow down and lower in pitch when the last player dies,
+# like when all players are bubbled
+source_files: [../src/deathMusicEff.cpp]
+hooks:
+  - name: StartBgmEffects
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x8013DA10
+    target_func: 'SndSceneMgr::startMiss(void)'
+
+  - name: ProcBgmEffects
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80046DE8
+    target_func: 'daPlBase_c__executePatch(int)'
+
+  - name: StopBgmEffects
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80144C50
+    target_func: 'dAcPy_c__doDeletePatch(int)'
+
+  # Remove original BGM stop and death sound
+  - name: DummyStartMiss
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x8019C470
+    target_func: 'ReturnNone'
+
+  # Applies in all cases, remove if you want to restore the original death sound
+  - {name: PatchDeathSound, type: patch, addr_pal: 0x8019C5E4, data: '3880074E'} # STRM_BGM_DOWN
+
+  # Extend DemoDown lengths so they don't die until the effect is over
+  - {name: PatchDownTime1, type: patch, addr_pal: 0x8013DA14, data: '38000080'}
+  - {name: PatchDownTime2, type: patch, addr_pal: 0x8013DDFC, data: '38000080'}
+  - {name: PatchDownTime3, type: patch, addr_pal: 0x8013DE08, data: '38000080'}
+  - {name: PatchDownTime4, type: patch, addr_pal: 0x8013E0F0, data: '38000080'}
+  - {name: PatchDownTime5, type: patch, addr_pal: 0x8013E0FC, data: '38000080'}
+  - {name: PatchDownTime6, type: patch, addr_pal: 0x8013E2FC, data: '38000080'}

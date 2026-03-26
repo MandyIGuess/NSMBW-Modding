@@ -66,6 +66,7 @@ original version on this repo.
 
   - [TPC Opening Port](/Miscellaneous/TPC-Opening-Port): Opening from NSMBW The Prankster Comets, ported to Newer 1.30 and NSMBWer+!
   - [Randomized Lighting](/Miscellaneous/Randomized-Lighting): Randomly selects the World Map and level lightings rather than choosing based on world/zone settings.
+  - [Death Music Effects](/Miscellaneous/Death-Music-Effects): Slows down the music and lowers its pitch when dying, just like when all players bubble.
 </details>
 
 ## Crediting and Usage
