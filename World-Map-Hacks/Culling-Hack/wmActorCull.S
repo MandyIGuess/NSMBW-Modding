@@ -8,8 +8,9 @@
 
 .extern wmCloudCullNames
 .extern wmCloudCullRadius
-.extern returnFromWmCloudCull1 # 0x808CD9E8
-.extern returnFromWmCloudCull2 # 0x808CDA80
+
+.extern wmIbaraCullRadius
+.extern wmIbaraCullNames
 
 .global CullAllWmActors
 CullAllWmActors:
@@ -24,10 +25,23 @@ CullAllWmActors:
 LoadWmCloudCullNames:
     lis     r30, wmCloudCullNames@h
     ori     r30, r30, wmCloudCullNames@l
-    b       returnFromWmCloudCull1
+    blr
 
 .global LoadWmCloudCullRadius
 LoadWmCloudCullRadius:
     lis     r29, wmCloudCullRadius@h
     ori     r29, r29, wmCloudCullRadius@l
-    b       returnFromWmCloudCull2
+    blr
+
+.global LoadWmIbaraNames
+LoadWmIbaraNames:
+    lis     r29, wmIbaraCullNames@h
+    ori     r29, r29, wmIbaraCullNames@l
+    blr
+
+.global LoadWmIbaraRadius
+LoadWmIbaraRadius:
+    lis     r4, wmIbaraCullRadius@h
+    ori     r4, r4, wmIbaraCullRadius@l
+    lfs     f31, 0x0(r4)
+    blr

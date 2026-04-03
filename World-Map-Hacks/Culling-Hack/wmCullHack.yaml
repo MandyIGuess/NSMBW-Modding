@@ -8,13 +8,13 @@ hooks:
 # Cull the map model
   - name: newCullInfo1
     type: branch_insn
-    branch_type: b
+    branch_type: bl
     src_addr_pal: 0x808E3184
     target_func: 'newCullInfo'
 
   - name: newCullInfo2
     type: branch_insn
-    branch_type: b
+    branch_type: bl
     src_addr_pal: 0x808E325C
     target_func: 'newCullInfo2'
 
@@ -38,15 +38,43 @@ hooks:
 # Cull World 7 cloud model
   - name: newWmCloudCullInfo1
     type: branch_insn
-    branch_type: b
+    branch_type: bl
     src_addr_pal: 0x808CD9E4
     target_func: 'LoadWmCloudCullNames'
 
   - name: newWmCloudCullInfo2
     type: branch_insn
-    branch_type: b
+    branch_type: bl
     src_addr_pal: 0x808CDA7C
     target_func: 'LoadWmCloudCullRadius'
 
   # Removes completely unused float at idx[0] of the table... why does this even exist?
   - {name: RemoveUnusedTableEntry, type: patch, addr_pal: 0x808CDAA8, data: 'C07D0000'} # lfs f3, 0x0(r29)
+
+# Cull World 5 vines
+  - name: ExpandWmIbara
+    type: patch
+    addr_pal: 0x808FCB58
+    data: '3860031C' # 0x24C + 0x58
+
+  # We expand the class to make a new array with 22 entries, so that we can cull a forgotten vine portion
+  # (vine blocking the Star Toad House near the right edge of the map)
+  - {name: FixArrayOffset1, type: patch, addr_pal: 0x808FD8A4, data: '93FC02C4'}
+  - {name: FixArrayOffset2, type: patch, addr_pal: 0x808FD8C4, data: '907C02C4'}
+  - {name: FixArrayOffset3, type: patch, addr_pal: 0x808FD938, data: '80BE02C4'}
+  - {name: FixArrayOffset4, type: patch, addr_pal: 0x808FD988, data: '809E02C4'}
+
+  - {name: FixLoopCount1, type: patch, addr_pal: 0x808FD8D0, data: '2C1B0016'}
+  - {name: FixLoopCount2, type: patch, addr_pal: 0x808FD9E4, data: '2C1C0016'}
+
+  - name: newWmIbaraNames
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x808FD884
+    target_func: 'LoadWmIbaraNames'
+
+  - name: newWmIbaraRadius
+    type: branch_insn
+    branch_type: bl
+    src_addr_pal: 0x808FD92C
+    target_func: 'LoadWmIbaraRadius'

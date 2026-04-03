@@ -10,7 +10,7 @@
 #define NO_CULL 0.0f
 
 static const float wmActorCullRadius[] = {
-    0.0f,     // WM_IBARA        : World 5 vines
+    0.0f,     // WM_IBARA        : World 5 vines (redefined as 0.0f), these use their own culling system
     NO_CULL,  // WM_ANTLION_MNG  : World 2 ambush manager
     250.0f,   // WM_CASTLE       : Castle
     100.0f,   // WM_TOWER        : Unused actor
@@ -28,7 +28,7 @@ static const float wmActorCullRadius[] = {
     10.0f,    // WM_STOP         : Unused actor
     170.0f,   // WM_TORIDE       : Tower
     180.0f,   // WM_GHOST        : Ghost House
-    80.0f,    // WM_DOKAN        : Obsolete actor(?) Created but never sets up any model
+    80.0f,    // WM_DOKAN        : Obsolete, likely rendered warp pipe models, however those are baked into the map
     120.0f,   // WM_CANNON       : Warp Cannon
     200.0f,   // WM_KOOPASHIP    : Airship
     100.0f,   // WM_BOSS_BASE    : Base actor for bosses (not used directly)
@@ -54,12 +54,12 @@ static const float wmActorCullRadius[] = {
     NO_CULL,  // WM_GRID         : Unused, dummied-out actor
     NO_CULL,  // WM_ISLAND       : World Select island, cannot be culled
     NO_CULL,  // WM_ITEM         : Items menu powerups, cannot be culled
-    2000.0f,  // WM_CS_W3_PALM   : Palm tree manager for World 2 and World 4
+    2000.0f,  // WM_CS_W3_PALM   : Palm tree manager for Worlds 2 and 4
     100.0f,   // WM_SURRENDER    : Tower/Castle clear flags
     800.0f,   // WM_KOOPA_CASTLE : Bowser's Castle
     100.0f,   // WM_ANCHOR       : Airship anchor
     250.0f,   // WM_PAKKUNHEAD   : World 7 climbable vines
-    2500.0f,  // WM_CLOUD        : World 7 clouds
+    2500.0f,  // WM_CLOUD        : World 7 clouds (also use their own culling system)
     400.0f,   // WM_SMALLCLOUD   : World 7 clouds, and the cloud in World 6
     250.0f,   // WM_KOOPAJR      : Bowser Jr
     10000.0f, // WM_PEACH        : Princess Peach
@@ -72,9 +72,9 @@ static const float wmActorCullRadius[] = {
     250.0f,   // WM_DANCE_PAKKUN : World 6 decorative pipe Piranha Plants 
     250.0f,   // WM_DOKANROUTE   : Animated pipe routes for World 6
     250.0f,   // WM_HANACHAN     : Wiggler in the background of World 5
-    250.0f,   // WM_TOGEZO       : Unused actor
+    250.0f,   // WM_TOGEZO       : Spiny seen when defeating a World 2 ambush
     250.0f,   // WM_MANTA        : Unused actor
-    80.0f,    // WM_TERESA       : Ghost House Boo
+    80.0f     // WM_TERESA       : Ghost House Boo
 };
 
 f32 getWmActorCullRadius(short profName) {
@@ -139,3 +139,37 @@ extern "C" const float wmCloudCullRadius[20] = {
     100.0f,
     100.0f
 };
+
+////////////////////////////////////////////
+// WM_IBARA CULLING
+////////////////////////////////////////////
+
+// This system is similar to the map model and WM_CLOUD culling. This supports up to 22 different bones in total.
+
+extern "C" const char *wmIbaraCullNames[22] = {
+    "E_p_01",
+    "E_p_02",
+    "E_p_03",
+    "N_p_01",
+    "N_p_02",
+    "N_p_03",
+    "N_p_04",
+    "N_p_05",
+    "N_p_06",
+    "N_p_07",
+    "N_p_08",
+    "S_p_01",
+    "S_p_02",
+    "W_p_01",
+    "W_p_04",
+    "W_p_05",
+    "W_p_06",
+    "W_p_07",
+    "W_p_08",
+    "W_p_09",
+    "W_p_10",
+    "W_p_11"  // Due to a bug, this bone wasn't culled, however this hack fixes it
+};
+
+// Every bone uses this radius
+extern float wmIbaraCullRadius = 120.0f;
