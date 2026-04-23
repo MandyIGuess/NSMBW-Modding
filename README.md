@@ -50,6 +50,7 @@ original version on this repo.
   <p></p>
 
   - [Rotation Controlled Coin Improvements](/Sprite-Hacks/Rotation-Coins): Adds various new settings to the Rotation Controlled Coin sprite!
+  - [EN_WATERPAIPO Restoration](/Sprite-Hacks/EN_WATERPAIPO): Allows you to spawn the unused `EN_WATERPAIPO` actor in levels!
 </details>
 
 <details>
