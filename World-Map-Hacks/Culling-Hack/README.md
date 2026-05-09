@@ -1,7 +1,7 @@
-# Culling Hack
+# World Map Culling Hack
 This allows you to easily modify the map model and actor culling on the World Map!
 
-![Static Badge](https://img.shields.io/badge/Version-1.3.0-default)
+![Static Badge](https://img.shields.io/badge/Version-1.3.1-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
 ![Static Badge](https://img.shields.io/badge/Modifies-World%20Maps-skyblue)
 
@@ -52,6 +52,9 @@ Also do the same for `wmActorCull.cpp` and `wmActorCull.S`.
 Make sure to reference `wmCullHack.yaml` in your project YAML so it gets compiled!
 
 ## Changelog
+
+### v1.3.1 (May 9th, 2026)
+- Fixed WM_BOSS_KAMEK actor being culled during the 8-Castle cutscene (radius was wrong)
 
 ### v1.3.0 (April 2nd, 2026)
 - Added support for culling the World 5 vines (WM_IBARA), as it uses its own culling sytem
