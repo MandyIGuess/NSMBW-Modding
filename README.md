@@ -54,6 +54,13 @@ original version on this repo.
 </details>
 
 <details>
+  <summary>SpriteTex/Model Hacks</summary>
+  <p></p>
+
+  - [Spiked Tower Block [462]](/SpriteTex/Spiked-Tower-Block)
+</details>
+
+<details>
   <summary>World Map Hacks: Changes and new features for the retail map system.</summary>
   <p></p>
 
