@@ -35,6 +35,7 @@ original version on this repo.
   - [Game Over Fix (for Modern MarioFont)](/Layout-Hacks/MarioFont-GameOver-Fix): Small hack that fixes the Game Over screen for mods that use the modern MarioFont!
   - [MoreFonts](/Layout-Hacks/MoreFonts): Adds support for loading more than four global fonts, and loading fonts from archives!
   - [Skip Player Selection](/Layout-Hacks/Skip-Player-Select): Goes from the File Select directly to the World Map!
+  - [Better Message Box](/Layout-Hacks/Better-Message-Box): Improved versions of NewerSMBW's Message Box!
 </details>
 
 <details>
