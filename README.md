@@ -18,6 +18,7 @@ original version on this repo.
   - [(Retail) Map HUD Star Coin Fix](/Bugfixes/Map-Hud-Star-Coins)
   - [Toad Balloon Spawning Fix](/Bugfixes/Toad-Balloon-Spawn)
   - [Stretching Mushroom Platform Culling](/Bugfixes/Stretch-Mushroom-Culling)
+  - [Bramball Collision Fix](/Bugfixes/Bramball-Collision-Fix)
 </details>
 
 <!--<details>

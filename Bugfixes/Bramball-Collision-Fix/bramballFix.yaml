@@ -1,0 +1,8 @@
+---
+source_files: [../src/bramballFix.cpp]
+hooks:
+  - name: FixInvisibleBlockStepUp
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x80A1D560
+    target_func: 'daEnIbaramushi_c_chkStepUp(dEn_c *, Point3d *)'
