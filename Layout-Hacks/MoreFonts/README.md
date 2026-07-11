@@ -25,6 +25,10 @@ These are simple to setup, just create a `font` folder, and put the font you wis
 **Note:** You cannot use archive fonts with BMG-printed text, as the BMG has no way of accessing archive fonts.
 
 ## Installation Instructions
+First off, in your Riivolution XML, you need to define Font folders (NewerSMBW and NSMBWer+ already do this for you).
+Additionally, you need to add `create="true"` to each folder element, in order for the game to be able to find your new fonts.
+
+
 Add the symbols below to your `kamek_pal.x` file. You do not need to add them to the other `.x` files.
 ```
 AreaLanguageFolder__FPCcPCc = 0x800B4670;
