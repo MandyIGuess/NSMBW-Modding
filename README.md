@@ -19,6 +19,7 @@ original version on this repo.
   - [Toad Balloon Spawning Fix](/Bugfixes/Toad-Balloon-Spawn)
   - [Stretching Mushroom Platform Culling](/Bugfixes/Stretch-Mushroom-Culling)
   - [Bramball Collision Fix](/Bugfixes/Bramball-Collision-Fix)
+  - [Line Controlled Tilt Girder Fixes](/Bugfixes/Line-Tilt-Girder)
 </details>
 
 <!--<details>

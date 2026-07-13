@@ -1,0 +1,14 @@
+---
+source_files: [../src/remoLiftLine.S, ../src/remoLiftLine.cpp]
+hooks:
+  - name: FixRemoLineLift1
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x808403FC
+    target_func: 'FixRemoLineLift1'
+
+  - name: FixRemoLineLift2
+    type: branch_insn
+    branch_type: b
+    src_addr_pal: 0x8084042C
+    target_func: 'FixRemoLineLift2'
