@@ -1,5 +1,5 @@
 # Line Controlled Tilt Girder Fixes
-The line-riding Tilt-Controlled Girder platform seen in retail 8-6 have some strange issues outside of that stage.
+The line-riding Tilt-Controlled Girder platform seen in retail 8-5 have some strange issues outside of that stage.
 
 If dragged along the left screen edge, they will cause **massive** lag spikes when going off of its line path, which makes
 them pretty much impossible to use outside of the retail use case (autoscroller stages). Additionally, this fix allows
