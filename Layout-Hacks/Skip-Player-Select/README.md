@@ -1,6 +1,7 @@
 # Skip Player Selection
 This allows you to go from the File Selection screen, directly into the World Map! This is most useful for mods that
 intend for only singleplayer, making the Player Selection screen rather useless.
+
 ![Static Badge](https://img.shields.io/badge/Version-1.0.0-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NewerSMBW%20(1.3.0)-maroon)
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
