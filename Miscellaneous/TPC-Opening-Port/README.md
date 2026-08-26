@@ -94,6 +94,11 @@ In your Riivolution patch XML, add the following line so the game can load the p
 <folder external="OpeningPics" disc="/OpeningPics" create="true" />
 ```
 
+If using NSMBWer+, add this so it can load the `Opening.bin` file:
+```xml
+<file external="Opening.bin" disc="/Opening.bin" create="true"/>
+```
+
 If you're using NewerSMBW, you'll need to disable Newer's opening level. Open the `cutScene.yaml` file,
 and remove/comment out the following lines:
 ```yaml
@@ -129,8 +134,11 @@ or remove the font entirely and use the retail MessageFont.
 
 ## Changelog
 
+### v1.0.2 (August 26th, 2026)
+- NSMBWer+ Version: Fixed download including a NewerRes folder, and fixed file paths
+
 ### v1.0.1 (February 3rd, 2025)
-- Newer Port: Changed the actor ID that the opening replaces so it no longer interferes with the meteor sprite
+- Newer Version: Changed the actor ID that the opening replaces so it no longer interferes with the meteor sprite
 
 ### v1.0.0 (February 2nd, 2025)
 - Initial release

@@ -84,7 +84,7 @@ int dScOpening_c::onCreate() {
 		layout.enableNonLoopAnim(6);
 	}
 
-	openingFile = (OpeningBinary*)LoadFile(&fileHandle, "/NewerRes/Opening.bin");
+	openingFile = (OpeningBinary*)LoadFile(&fileHandle, "/Opening.bin");
 
 	return true;
 }
