@@ -1,7 +1,7 @@
 # NSMBW: The Prankster Comets Opening Port
 This ports the opening/flipbook sequence from NSMBWTPC to Newer 1.30, as well as NSMBWer+!
 
-![Static Badge](https://img.shields.io/badge/Version-1.0.1-default)
+![Static Badge](https://img.shields.io/badge/Version-1.0.2-default)
 ![Static Badge](https://img.shields.io/badge/Supports-NewerSMBW%20(1.3.0)-maroon)
 ![Static Badge](https://img.shields.io/badge/Supports-NSMBWer+-DCDC73)
 ![Static Badge](https://img.shields.io/badge/Modifies-Cutscenes-EF6031)
