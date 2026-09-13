@@ -54,6 +54,7 @@ original version on this repo.
 
   - [Rotation Controlled Coin Improvements](/Sprite-Hacks/Rotation-Coins): Adds various new settings to the Rotation Controlled Coin sprite!
   - [EN_WATERPAIPO Restoration](/Sprite-Hacks/EN_WATERPAIPO): Allows you to spawn the unused `EN_WATERPAIPO` actor in levels!
+  - [Event Activating Crowd Clapper](/Sprite-Hacks/Event-Activating-Crowd-Clapper/): Allows the Crowd Clapper to trigger events!
 </details>
 
 <details>
