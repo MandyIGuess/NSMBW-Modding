@@ -1,0 +1,21 @@
+  <sprite id="459" name="Crowd Clapping Controller for Coin Collection #1" notes="A controller that generates a clapping sound when the player collects the listed number of coins of both types from the Collection ID group.">
+    <dependency notes="You cannot use tileset coins for this to function.">
+      <suggested sprite="147"/>
+      <suggested sprite="237"/>
+    </dependency>
+    <value nybble="9-10" title="# of Yellow Coins Required" comment="This determines the number of paired standard coins required to trigger the Crowd Clapper."/>
+    <value nybble="7-8" title="# of Blue Coins Required" comment="This determines the number of paired blue coins required to trigger the Crowd Clapper."/>
+    <value nybble="12" title="Collection ID" comment="This pairs matching Coins with the Crowd Clapper to track their collection." idtype="Collection"/>
+    <value nybble="3-4" title="Target Event ID" comment="This event will be activated when all coins are collected." idtype="Target"/>
+  </sprite> <!-- #459: Crowd Clapping Controller for Coin Collection #1 -->
+
+  <sprite id="461" name="Crowd Clapping Controller for Coin Collection #2" notes="A controller that generates a clapping sound when the player collects the listed number of coins of both types from the Collection ID group. It is functionally identical to #1.">
+    <dependency notes="You cannot use tileset coins for this to function.">
+      <suggested sprite="147"/>
+      <suggested sprite="237"/>
+    </dependency>
+    <value nybble="9-10" title="# of Yellow Coins Required" comment="This determines the number of paired standard coins required to trigger the Crowd Clapper."/>
+    <value nybble="7-8" title="# of Blue Coins Required" comment="This determines the number of paired blue coins required to trigger the Crowd Clapper."/>
+    <value nybble="12" title="Collection ID" comment="This pairs matching Coins with the Crowd Clapper to track their collection." idtype="Collection"/>
+    <value nybble="3-4" title="Target Event ID" comment="This event will be activated when all coins are collected." idtype="Target"/>
+  </sprite> <!-- #461: Crowd Clapping Controller for Coin Collection #2 -->
